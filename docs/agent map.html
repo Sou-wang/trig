@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>特工手册</title>
+
+    <!-- 防止手机缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
     <link rel="stylesheet" href="../css/turn.css">
     <link rel="stylesheet" href="../css/style agent map.css">
 </head>
+
 <body>
+
+    <!-- 手机竖屏提示 -->
+    <div id="rotate-tip">
+        <div class="rotate-content">
+            <div class="rotate-icon">📱↻</div>
+            <p>请将设备旋转为横屏阅读</p>
+        </div>
+    </div>
+
     <div class="book-container">
+
         <div id="flipbook"></div>
+
         <div class="controls">
             <button id="prevBtn">◀ 上一页</button>
             <button id="nextBtn">下一页 ▶</button>
         </div>
+
     </div>
 
     <script src="../js/jquery-4.0.0.min.js"></script>
     <script src="../js/turn.min.js"></script>
     <script src="../main/script agent map.js"></script>
+
 </body>
 </html>
