@@ -8,10 +8,10 @@ const BASE_URL = "https://www.parttriangleagencypart.top/";
 // 密码映射：密码 → 文档相对路径（相对于 docs/ 文件夹）
 const PASSWORD_MAP = {
     // 格式："密码" : "文档相对路径"
-    "冻酸奶": "../docs/agent map.html",
-    "projectX": "../docs/project-plan.pdf",
-    "finance88": "../docs/finance-report.html",
-    "internal": "../docs/internal/secret-doc.md"
+    "冻酸奶": "docs/agent map.html",
+    "projectX": "docs/project-plan.pdf",
+    "finance88": "docs/finance-report.html",
+    "internal": "docs/internal/secret-doc.md"
 };
 //记得相对路径
 // ============================================================

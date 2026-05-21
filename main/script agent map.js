@@ -4,7 +4,7 @@
 
 // 🔧 在这里修改你的配置
 const TOTAL_PAGES = 139;                    // 总页数（改成你实际的页数）
-const IMAGE_PATH = "../docs/which is agent/page-";  // 图片路径前缀
+const IMAGE_PATH = "docs/which is agent/page-";  // 图片路径前缀
 const IMAGE_EXT = ".png";                   // 图片扩展名
 const USE_PADDING = true;                   // 是否使用前导零（001, 002 格式）
 const PADDING_DIGITS = 3;                   // 前导零位数（3 表示 001）
