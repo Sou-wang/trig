@@ -3,7 +3,8 @@ $(window).on("load", function () {
     const $flipbook = $('#flipbook');
     const displayMode = 'double'; // ❗强制双页
     const isMobile = window.innerWidth <= 768;
-
+    const view = $flipbook.turn("view");
+    const isRealDouble = view && view.length === 2 && view[1] !== 0;
     // =========================
     // 📐 固定图片比例
     // =========================
@@ -75,9 +76,11 @@ if (isMobile) {
         turning: function (e, page) {
             return true;
         }
+
+    
     }
 });
-
+ updateFlipbookState();
     });
     $(window).off("resize");
     // =========================
@@ -105,12 +108,41 @@ if (isMobile) {
     $("#prevBtn").click(() => $flipbook.turn("previous"));
     $("#nextBtn").click(() => $flipbook.turn("next"));
 });
-function checkOrientation() {
+window.addEventListener("resize", updateFlipbookState);
+window.addEventListener("load", updateFlipbookState);
+
+
+
+function updateFlipbookState() {
     const isPortrait = window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
 
-    document.getElementById("rotate-tip").style.display =
-        isPortrait ? "flex" : "none";
-}
+    const $flipbook = $('#flipbook');
 
-window.addEventListener("resize", checkOrientation);
-window.addEventListener("load", checkOrientation);
+    // turn.js 当前模式
+    let display = $flipbook.turn("display");
+
+    const isDouble = (display === "double") && isRealDouble;
+
+    const $tip = $("#rotate-tip");
+
+    // =========================
+    // 📱 1. 竖屏提示（替代原逻辑）
+    // =========================
+    if (isPortrait) {
+        $tip.html("请竖屏观看 📱").show();
+        return;
+    }
+
+    // =========================
+    // ❌ 2. 双页失败提示
+    // =========================
+    if (!isDouble) {
+        $tip.html("双页模式加载失败，请竖屏查看单页模式").show();
+        return;
+    }
+
+    // =========================
+    // ✅ 正常状态
+    // =========================
+    $tip.hide();
+}
