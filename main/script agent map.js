@@ -1,7 +1,7 @@
 $(window).on("load", function () {
 
     const $flipbook = $('#flipbook');
-
+    const displayMode = 'double'; // ❗强制双页
     const isMobile = window.innerWidth <= 768;
 
     // =========================
@@ -18,6 +18,12 @@ $(window).on("load", function () {
 
     let bookWidth = containerW;
     let bookHeight = bookWidth / BOOK_RATIO;
+    if (isMobile) {
+
+    // 强制横向布局思维
+    bookWidth = window.innerWidth * 1.2; // 故意略放大
+    bookHeight = bookWidth / BOOK_RATIO;
+}
 
     if (bookHeight > containerH) {
         bookHeight = containerH;
@@ -39,6 +45,7 @@ $(window).on("load", function () {
     }
 
     // =========================
+    
     // ⏱️ 再延迟确保 layout
     // =========================
     requestAnimationFrame(() => {
@@ -48,7 +55,7 @@ $(window).on("load", function () {
             width: bookWidth,
             height: bookHeight,
 
-            display: isMobile ? 'single' : 'double',
+            display: 'double',   // ❗关键：不要让 mobile 自动 single
 
             autoCenter: true,
 
