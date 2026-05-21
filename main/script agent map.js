@@ -30,7 +30,6 @@ $(document).ready(function() {
         const pageHtml = `
             <div class="page">
                 <img src="${IMAGE_PATH}${pageNum}${IMAGE_EXT}" alt="第${i}页">
-                <div class="page-number">${i}</div>
             </div>
         `;
         $flipbook.append(pageHtml);
