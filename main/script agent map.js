@@ -15,7 +15,12 @@ $(window).on("load", function () {
     // =========================
     let containerW = window.innerWidth;
     let containerH = window.innerHeight;
+    let bookWidth = window.innerWidth;
 
+// ❗关键：人为扩大宽度，让它永远认为够双页
+if (isMobile) {
+    bookWidth = window.innerWidth * 2.2;
+}
     let bookWidth = containerW;
     let bookHeight = bookWidth / BOOK_RATIO;
     if (isMobile) {
@@ -50,24 +55,31 @@ $(window).on("load", function () {
     // =========================
     requestAnimationFrame(() => {
 
-        $flipbook.turn({
+       $flipbook.turn({
 
-            width: bookWidth,
-            height: bookHeight,
+    width: bookWidth,
+    height: bookHeight,
 
-            display: 'double',   // ❗关键：不要让 mobile 自动 single
+    display: 'double',
 
-            autoCenter: true,
+    autoCenter: true,
 
-            elevation: 0,
+    elevation: 0,
 
-            gradients: false,
+    gradients: false,
 
-            acceleration: true
-        });
+    acceleration: true,
+
+    // ❗关键：禁止内部 layout 重算
+    when: {
+        turning: function (e, page) {
+            return true;
+        }
+    }
+});
 
     });
-
+    $(window).off("resize");
     // =========================
     // 📱 手机触摸翻页
     // =========================
