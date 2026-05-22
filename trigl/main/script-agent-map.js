@@ -20,7 +20,7 @@ $(window).on("load", function () {
     for (let i = 1; i <= 139; i++) {
         let pageNum = i.toString().padStart(3, '0');
         // 🔴 这里路径必须正确！如果你的图片在 images 下请改成：images/page-${pageNum}.webp
-        $flipbook.append(`<div class="page"><img src="agent/page-${pageNum}.webp"></div>`);
+        $flipbook.append(`<div class="page"><img src="./agent/page-${pageNum}.webp"></div>`);
     }
 
     // 初始化翻书

@@ -6,12 +6,12 @@ const data = [
 {
     id: 1,
     index: "01",
-    img: "docs/imgo/001.webp",
-    modalImg: "docs/imgi/001.webp",
+    img: "./docs/imgo/001.webp",
+    modalImg: "./docs/imgi/001.webp",
     title: "“我们是谁？”",
     fontIndex: "打卡上班，拯救世界",
     answer: "三角机构",
-    url: "trigl/index.html"
+    url: "./trigl/index.html"
 },
 
 /*
