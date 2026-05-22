@@ -137,7 +137,7 @@ function updateFlipbookState() {
     // ❌ 2. 双页失败提示
     // =========================
     if (!isDouble) {
-        $tip.html("双页模式加载失败，请竖屏查看单页模式").show();
+        $tip.html("很少见的情况，特工，我希望你的头没有扭断，转回去吧。").show();
         return;
     }
 

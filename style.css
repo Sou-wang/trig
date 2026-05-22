@@ -1,0 +1,278 @@
+/* =========================
+   🍎 Apple 风背景
+========================= */
+body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Helvetica Neue", Arial;
+
+    /* ✔ 苹果系统标准背景色 */
+    background: #f5f5f7;
+
+    color:#1d1d1f;
+
+    /* ✔ 关键：铺满全屏 */
+    min-height: 100vh;
+}
+/* =========================
+   布局（更大留白）
+========================= */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(9cm, 1fr));
+    gap:32px;
+    padding:60px;
+    justify-items:center;
+}
+
+/* =========================
+   🍏 Apple 卡片按钮（核心）
+========================= */
+.btn{
+    width:9cm;
+    height:9cm;
+
+    border-radius:28px;
+
+    /* 玻璃底 */
+    background: rgba(255,255,255,0.7);
+
+    border:1px solid rgba(0,0,0,0.06);
+
+    /* 苹果级阴影（非常轻） */
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position:relative;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition: all 0.25s ease;
+}
+
+/* =========================
+   hover：苹果式“漂浮”
+========================= */
+.btn:hover{
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* 点击反馈（苹果很轻） */
+.btn:active{
+    transform: translateY(-3px) scale(0.99);
+}
+
+/* =========================
+   索引标签（极简）
+========================= */
+.btn::before{
+
+    content: ""
+}
+
+/* =========================
+   图片区域（玻璃小卡）
+========================= */
+.img-placeholder{
+    width:78%;
+    height:65%;
+
+    border-radius:18px;
+
+    background: rgba(255,255,255,0.6);
+
+    border:1px solid rgba(0,0,0,0.05);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:12px;
+    color:rgba(0,0,0,0.4);
+
+    backdrop-filter: blur(10px);
+}
+
+/* =========================
+   🍏 modal（苹果浮层）
+========================= */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+
+    justify-content:center;
+    align-items:center;
+    z-index: 999;
+}
+
+/* =========================
+   弹窗主体（Apple Card）
+========================= */
+.modal-content{
+    width:440px;
+    height:440px;
+
+    border-radius:28px;
+
+    background: rgba(255,255,255,0.75);
+
+    border:1px solid rgba(0,0,0,0.06);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.18);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:24px;
+
+    position:relative;
+}
+
+/* 关闭按钮（苹果极简） */
+.close{
+    position:absolute;
+    top:14px;
+    right:16px;
+    cursor:pointer;
+    font-size:14px;
+    color:rgba(0,0,0,0.5);
+}
+
+/* =========================
+   弹窗图片
+========================= */
+.modal-img{
+    width:85%;
+    height:190px;
+
+    border-radius:18px;
+
+    background: rgba(255,255,255,0.6);
+
+    border:1px solid rgba(0,0,0,0.05);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:35px;
+
+    color:rgba(0,0,0,0.45);
+}
+
+.modal-img img {
+    max-width: 90%;   /* 最大宽度不超出 modal 内容 */
+    max-height: 60vh; /* 高度限制在视口的60% */
+    object-fit: contain; /* 保持比例完整显示 */
+    display: block;
+    margin: 0 auto;  /* 居中 */
+    border-radius: 8px;
+}
+
+.btn .img-placeholder img {
+    width: 100%;     /* 宽度填满父容器 */
+    height: 100%;    /* 高度填满父容器 */
+    object-fit: cover; /* 按比例裁剪填充，不变形 */
+    border-radius: 12px; /* 保持按钮柔和圆角 */
+}
+/* 标题 */
+.title{
+    margin-top:14px;
+    font-size:18px;
+    font-weight:500;
+}
+
+/* 字体索引 */
+.font-index{
+    font-size:12px;
+    color:rgba(0,0,0,0.4);
+}
+
+/* =========================
+   输入框（苹果风）
+========================= */
+input{
+    margin-top:12px;
+    width:85%;
+
+    padding:10px 12px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(0,0,0,0.08);
+
+    background: rgba(255,255,255,0.7);
+
+    outline:none;
+
+    transition:0.2s;
+}
+
+input:focus{
+    border-color: rgba(0,122,255,0.6);
+    box-shadow:0 0 0 3px rgba(0,122,255,0.15);
+}
+
+/* =========================
+   按钮（苹果系统按钮）
+========================= */
+button{
+    margin-top:14px;
+    width:85%;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    border:none;
+
+    background: #007aff;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+button:hover{
+    transform: translateY(-2px);
+    background:#0a84ff;
+}
+
+button:active{
+    transform: scale(0.98);
+}
+
+.font-index.highlight{
+    font-style: italic;               /* 斜体 */
+    color: #888888;                   /* 灰色 */
+    font-family: "Courier New", monospace; /* 类似虚线、等宽字体 */
+    letter-spacing: 2px;              /* 可调字符间距，更有虚线感 */
+}   
+
+/* 打开 modal 时页面按钮淡化 */
+body.modal-open .btn {
+    opacity: 0.3;
+    pointer-events: none; /* 禁止点击 */
+    transition: opacity 0.3s;
+}
