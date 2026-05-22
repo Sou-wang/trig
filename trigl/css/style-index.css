@@ -23,16 +23,16 @@ body {
     max-width: 440px;
 }
 
-.logo {
+.imge001{
     text-align: center;
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 10px;
+    margin-bottom: 5px;
 }
 
 h1 {
     text-align: center;
     color: #0f172a;
-    font-size: 24px;
+    font-size: 35px;
     margin-bottom: 8px;
 }
 
