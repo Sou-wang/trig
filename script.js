@@ -11,7 +11,7 @@ const data = [
     title: "“我们是谁？”",
     fontIndex: "打卡上班，拯救世界",
     answer: "三角机构",
-    url: "trig/index.html"
+    url: "trigl/index.html"
 },
 
 /*
