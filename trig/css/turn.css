@@ -1,8 +1,5 @@
 #flipbook {
     background: #000;
-    width: 200vw ;  /* 关键：制造双页空间 */
-    height: 100vh;
-
 }
 
 #flipbook .page {
