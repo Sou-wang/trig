@@ -150,7 +150,7 @@ function verify(id){
 
         /* 🔒 达到3次锁定30秒 */
         if(fail >= 3){
-            setLock(id, 9999999999);
+            setLock(id, 6300000);
             resetFail(id);
 
             alert("知之为知之，不知为不知");

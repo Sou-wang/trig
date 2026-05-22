@@ -17,7 +17,7 @@ const PASSWORD_MAP = {
 const FAIL_KEY_PREFIX = "fail_"; // 记录失败次数
 const LOCK_KEY_PREFIX = "lock_"; // 记录锁定时间
 const MAX_FAIL = 3;              // 错误次数上限
-const LOCK_TIME = 99*  9999;     // 锁定时间，毫秒（30秒）
+const LOCK_TIME = 900000*7  ;     // 锁定时间，毫秒（30秒）
 
 // ============================================================
 // 🔧 DOM元素
