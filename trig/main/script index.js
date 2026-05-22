@@ -3,7 +3,7 @@
 // ============================================================
 
 // 基础路径：你的 Git 仓库托管地址（开启 Pages 后获得）
-const BASE_URL = "https://www.parttriangleagencypart.top/";
+const BASE_URL = "https://www.parttriangleagencypart.top/trig/";
 
 // 密码映射：密码 → 文档相对路径（相对于 docs/ 文件夹）
 const PASSWORD_MAP = {
